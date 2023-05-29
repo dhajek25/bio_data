@@ -1,30 +1,31 @@
 s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
 
-def dna_nucleotides_count(s): """ Count the nucleotides (A, T, C, G) in the input string.
+def dna_nucleotides_count(s):
+    """ Count the nucleotides (A, T, C, G) in the input string.
 
-Parameters:
-s (str): The input string to count nucleotides in.
+    Parameters:
+    s (str): The input string to count nucleotides in.
+    
+    Returns:
+    A view object of the dictionary's items. Each item is a tuple with a nucleotide and its count.
+    
+    Example:
+    dna_nucleotides_count('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
+    dict_items([('A', 20), ('T', 21), ('C', 12), ('G', 17)])
+    """
 
-Returns:
-A view object of the dictionary's items. Each item is a tuple with a nucleotide and its count.
+    nucl_dict = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
 
-Example:
-dna_nucleotides_count('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
-dict_items([('A', 20), ('T', 21), ('C', 12), ('G', 17)])
-"""
+    for e in s:
+        if e in nucl_dict.keys():
+            nucl_dict[e] += 1
 
-nucl_dict = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
+    result = ''
 
-for e in s:
-    if e in nucl_dict.keys():
-        nucl_dict[e] += 1
+    for key, value in nucl_dict.items():
+        result += f"{key}: {value}\n"
 
-result = ''
-
-for key, value in nucl_dict.items():
-    result += f"{key}: {value}\n"
-
-return result
+    return result
 
 result = dna_nucleotides_count(s)
 
