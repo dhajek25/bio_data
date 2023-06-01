@@ -20,13 +20,9 @@ def dna_nucleotides_count(s):
         if e in nucl_dict.keys():
             nucl_dict[e] += 1
 
-    result = ''
+    return nucl_dict
 
-    for key, value in nucl_dict.items():
-        result += f"{key}: {value}\n"
 
-    return result
+def test_function(s):
 
-result = dna_nucleotides_count(s)
-
-print(result)
+    return s[0]
