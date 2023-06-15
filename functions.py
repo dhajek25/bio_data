@@ -22,6 +22,37 @@ def dna_nucleotides_count(s):
 
     return nucl_dict
 
+def transcription(s):
+    return s.replace('T', 'U')
+
+def complement(s):
+
+    replacements_dict = {
+        'A': 't',
+        'T': 'a',
+        'C': 'g',
+        'G': 'c'
+    }
+
+    for key, value in replacements_dict.items():
+        if key in s:
+            s = s.replace(key, value)
+
+    return s.upper()
+def reverse_complement(s):
+
+    replacements_dict = {
+        'A': 't',
+        'T': 'a',
+        'C': 'g',
+        'G': 'c'
+    }
+
+    for key, value in replacements_dict.items():
+        if key in s:
+            s = s.replace(key, value)
+
+    return s[::-1].upper()
 
 def test_function(s):
 
