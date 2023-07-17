@@ -57,3 +57,32 @@ def reverse_complement(s):
 def test_function(s):
 
     return s[0]
+
+
+s_u = 'AGAUGCUUUUCAUUCUGACUGCAACGGGCAAUAUGUCUCUGUGUGGAUUAAAAAAAGAGUGUCUGAUAGCAGC'
+
+def find_start_codon(mrna_sequence):
+
+    start_codon = "AUG"
+
+    start_codon_index = mrna_sequence.find(start_codon)
+
+    if start_codon_index != -1:
+        mrna_without_start_codon = mrna_sequence[start_codon_index + 3:]
+
+    codons = []
+
+    for i in range(0, len(mrna_without_start_codon), 3):
+        codon = mrna_without_start_codon[i:i+3]
+
+        if len(codon) == 3:
+            codons.append(codon)
+        else:
+            break
+    print(codons)
+
+
+
+
+
+
