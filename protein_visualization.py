@@ -43,7 +43,7 @@ def molecule_render(pdb):
     showmol(pdbview, height=500, width=800)
 
 # ESMfold
-def protein_fold(response):
+def protein_fold(result):
     """
     Function to send a POST request with a Protein string/sequence to an external API (ESM Fold). The response is
     a PDB representation of the predicted protein structure, which is written into a file. The function then loads
@@ -59,6 +59,10 @@ def protein_fold(response):
     None
         The function does not return anything but writes the response to a file and visualizes the protein structure.
     """
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+
+    response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers,
+                             data=result)
 
     # Decode the content of the response and assign it to pdb_string
     pdb_string = response.content.decode('utf-8')

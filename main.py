@@ -69,13 +69,7 @@ with body:
                 proteins = processor.process('aminoacids_combination.json')
                 result = "".join(proteins)
 
-                headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-
-                response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers,
-                                         data=result)
-
-                protein_fold(response)
-
+                protein_fold(result)
 
             # Displaying the result to the user
             else:
