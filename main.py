@@ -1,23 +1,26 @@
 import pandas as pd
 
+from streamlit_option_menu import option_menu
+
 # Importing the required functions and classes from external modules
 from functions import dna_nucleotides_count, transcription, complement, reverse_complement, DNAProcessor
 from helper_functions import is_dna_valid, upper_letters
 
 from protein_visualization import *
 
+st.set_page_config(page_title="toto he titul", layout="centered")
+st.title("DNA Analyzator")
 
-# Defining containers for header and body content
-header = st.container()
-body = st.container()
 
-# Populating the header content
-with header:
-    st.title('Welcome to DNA Analyzator!')
-    st.text('Hakuna Matata')
+selected_menu = option_menu(menu_title=None,
+            options=["Data Entry", "Data Visualization"],
+            icons=["pencil_fill", "bar-chart-fill"],
+            orientation="horizontal")
 
 # Populating the main body content
-with body:
+
+if selected_menu == "Data Entry":
+
     st.header('Choose the Function')
 
     # List of functions available for users to choose from
@@ -80,3 +83,6 @@ with body:
     # If the DNA is not valid, display a warning message
     else:
         st.warning(f"The entered DNA contains invalid symbols: {is_dna_valid}! Valid symbols/nucleotides are 'A', 'T', 'C', 'G'!")
+
+if selected_menu == "Data Visualization":
+    st.write("Hello,I am yellow")
