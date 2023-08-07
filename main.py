@@ -2,6 +2,8 @@ import pandas as pd
 
 from streamlit_option_menu import option_menu
 
+import dtb_connection as dtb
+
 # Importing the required functions and classes from external modules
 from functions import dna_nucleotides_count, transcription, complement, reverse_complement, DNAProcessor
 from helper_functions import is_dna_valid, upper_letters
