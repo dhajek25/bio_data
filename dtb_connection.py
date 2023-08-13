@@ -15,14 +15,15 @@ db = deta.Base("my_no_dtb")
 def insert_result(date, result):
     return db.put({"key": date,"result": result})
 
-def get_result():
+def fetch_result():
     res = db.fetch()
     return res.items
+
 
 date = '2021-09-01'
 
 result = 'TESTSTRING'
 
-insert_result(date, result)
+#insert_result(date, result)
 
-get_result()
+#fetch_result()

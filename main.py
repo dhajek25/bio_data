@@ -1,8 +1,11 @@
 import pandas as pd
+import datetime
+import os
 
 from streamlit_option_menu import option_menu
 
 import dtb_connection as dtb
+
 
 # Importing the required functions and classes from external modules
 from functions import dna_nucleotides_count, transcription, complement, reverse_complement, DNAProcessor
@@ -10,7 +13,7 @@ from helper_functions import is_dna_valid, upper_letters
 
 from protein_visualization import *
 
-st.set_page_config(page_title="toto he titul", layout="centered")
+st.set_page_config(page_title="Analyse yourself!", layout="centered")
 st.title("DNA Analyzator")
 
 
@@ -74,11 +77,16 @@ if selected_menu == "Data Entry":
                 proteins = processor.process('aminoacids_combination.json')
                 result = "".join(proteins)
 
-                protein_fold(result)
+                # protein_fold(result)
 
             # Displaying the result to the user
             else:
                 result = "No function selected."
+
+            # Define string str_date, where you will write the actual date and time
+            str_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+            dtb.insert_result(str_date, result)
 
             st.write("Result:", result)
 
@@ -87,4 +95,18 @@ if selected_menu == "Data Entry":
         st.warning(f"The entered DNA contains invalid symbols: {is_dna_valid}! Valid symbols/nucleotides are 'A', 'T', 'C', 'G'!")
 
 if selected_menu == "Data Visualization":
-    st.write("Hello,I am yellow")
+
+    data_list = dtb.fetch_result()
+
+    options = [item['result'] for item in data_list]
+
+    selected_option = st.selectbox("Choose a result:", options)
+
+    if st.button("Select Result"):
+
+        st.write("You selected:", selected_option.split(" (")[0])
+
+    #choosen_result = data_list[0]['result']
+
+    #protein_fold(choosen_result)
+    #st.write(choosen_result)
