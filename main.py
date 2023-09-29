@@ -6,19 +6,19 @@ from streamlit_option_menu import option_menu
 
 import dtb_connection as dtb
 
-
 # Importing the required functions and classes from external modules
 from functions import dna_nucleotides_count, transcription, complement, reverse_complement, DNAProcessor
 from helper_functions import is_dna_valid, upper_letters
 
 from protein_visualization import *
+from model_classification_class import classify_protein
 
 st.set_page_config(page_title="Analyse yourself!", layout="centered")
 st.title("DNA Analyzator")
 
 
 selected_menu = option_menu(menu_title=None,
-            options=["Data Entry", "Data Visualization"],
+            options=["Data Entry", "Data Visualization", "Protein Classification"],
             icons=["pencil_fill", "bar-chart-fill"],
             orientation="horizontal")
 
@@ -110,3 +110,17 @@ if selected_menu == "Data Visualization":
 
     #protein_fold(choosen_result)
     #st.write(choosen_result)
+
+if selected_menu == "Protein Classification":
+
+    data_list = dtb.fetch_result()
+
+    options = [item['result'] for item in data_list]
+
+    selected_option = st.selectbox("Choose a result:", options)
+
+    if st.button("Select Result"):
+
+        protein_class = classify_protein(selected_option)
+
+        st.write("Your protein belongs to:", protein_class)
