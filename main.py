@@ -123,4 +123,4 @@ if selected_menu == "Protein Classification":
 
         protein_class = classify_protein(selected_option)
 
-        st.write("Your protein belongs to:", protein_class)
+        st.write(protein_class)

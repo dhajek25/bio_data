@@ -48,13 +48,29 @@ def classify_protein(protein_seq):
     predicted_protein.columns = col_names
 
     # Get the predicted class with the highest probability
-    predicted_class = predicted_protein.max().idxmax()
+    # predicted_class = predicted_protein.max().idxmax()
 
-    return predicted_class
+    # Find the highest number in the dataframe
+    max_probability = predicted_protein.values.max()
+
+    # Find the row with the highest number
+    row_with_max_prob = predicted_protein[predicted_protein.isin([max_probability]).any(axis=1)]
+
+    # Sort this row from the highest number to lowest while preserving column names
+    sorted_indices = row_with_max_prob.iloc[0].sort_values(ascending=False).index
+    sorted_row = row_with_max_prob[sorted_indices]
+
+    # Transpose the sorted row to a column
+    transposed = sorted_row.T
+
+    # Rename the column to "class_probability"
+    transposed.columns = ['class_probability']
+
+    return round(transposed, 3).head(3) * 100
 
 # Usage:
 #model_path = 'trained_model/protein_classification.keras'
 #tokenizer_path = 'trained_model/tokenizer.json'
 #protein_sequence = 'MVLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRVKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGNFGADAQGAMNKALELFRKDIAAKYKELGYQG'
-#result = classify_protein(model_path, tokenizer_path, protein_sequence)
+#result = classify_protein(model_path)
 #print(result)
