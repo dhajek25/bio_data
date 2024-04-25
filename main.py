@@ -1,15 +1,10 @@
 import pandas as pd
 import datetime
-import os
-
 from streamlit_option_menu import option_menu
 
 import dtb_connection as dtb
-
-# Importing the required functions and classes from external modules
 from functions import dna_nucleotides_count, transcription, complement, reverse_complement, DNAProcessor
 from helper_functions import is_dna_valid, upper_letters
-
 from protein_visualization import *
 from model_classification_class import classify_protein
 
@@ -77,16 +72,16 @@ if selected_menu == "Data Entry":
                 proteins = processor.process('aminoacids_combination.json')
                 result = "".join(proteins)
 
+                # Define string str_date, where you will write the actual date and time
+                str_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+                dtb.insert_result(str_date, result)
+
                 # protein_fold(result)
 
             # Displaying the result to the user
             else:
                 result = "No function selected."
-
-            # Define string str_date, where you will write the actual date and time
-            str_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-
-            dtb.insert_result(str_date, result)
 
             st.write("Result:", result)
 

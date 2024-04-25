@@ -83,8 +83,8 @@ def classify_protein(protein_seq):
 # FOR LOCAL TESTING
 
 # Usage:
-#model_path = 'trained_model/protein_classification.keras'
-#tokenizer_path = 'trained_model/tokenizer.json'
-#protein_sequence = 'MVLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRVKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGNFGADAQGAMNKALELFRKDIAAKYKELGYQG'
-#result = classify_protein(model_path)
-#print(result)
+# model_path = 'trained_model/protein_classification.keras'
+# tokenizer_path = 'trained_model/tokenizer.json'
+# protein_sequence = 'MVLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRVKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGNFGADAQGAMNKALELFRKDIAAKYKELGYQG'
+# result = classify_protein(model_path)
+# print(result)
