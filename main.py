@@ -106,10 +106,10 @@ if selected_menu == "Data Visualization":
 
         st.write("You selected:", selected_option.split(" (")[0])
 
-    #choosen_result = data_list[0]['result']
-
-    #protein_fold(choosen_result)
-    #st.write(choosen_result)
+    # choosen_result = data_list[0]['result']
+    #
+    # protein_fold(choosen_result)
+    # st.write(choosen_result)
 
 if selected_menu == "Protein Classification":
 
