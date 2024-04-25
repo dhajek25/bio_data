@@ -47,6 +47,9 @@ The protein_class_prep.ipynb is Jupyter notebook, which was used for training th
 ### protein_visualization.py
 The protein_visualization.py script, which is used to send a POST request with a Protein sequence to an external API (ESM Fold). The response is then visualize.
 
+### dtb_connection.py
+Enables connection and writing/retrieving data to/from NoSQL database.
+
 -------------------------------------------------------------------------------------------------------------------
 
 
