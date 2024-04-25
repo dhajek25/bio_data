@@ -31,6 +31,6 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 ## Example
 
-#### Want explore more? Useful bioinformatics links
+#### Want explore more? Useful bioinformatics links:
 
 https://rosalind.info/problems/locations/
