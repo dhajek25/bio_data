@@ -1,3 +1,10 @@
+# DNA Analyzator
+
+## Description
+The DNA Analyzator is a Streamlit-based web application built with Python, designed to facilitate DNA sequence analysis and protein characterization. With this app, users can explore various functions for processing DNA data, including nucleotide counting, translation to protein sequences, visualization of protein structures, and classification of proteins based on its structure.
+
+
+
 # bioinformatics
 
 https://rosalind.info/problems/locations/
