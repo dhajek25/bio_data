@@ -22,8 +22,14 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
     ```
     streamlit run main.py
     ```
-   
-    
+
+## Usage
+1. Enter a DNA sequence into the input field provided on the app's interface.
+2. Choose from the available options to perform nucleotide counting, translation to protein sequences, etc.
+3. Click on Data Visualization to see 3D structure of your created protein.
+4. Click on Protein Classification, where you can see in which group your protein belongs.
+
+## Example
 
 # bioinformatics
 
