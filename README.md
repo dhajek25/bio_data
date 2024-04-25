@@ -10,6 +10,20 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
     ```
     git clone https://github.com/your-username/bio_data.git
     ```
+    
+2. Install the required dependencies:
+   
+    ```
+    pip install -r requirements.txt
+    ```
+
+3.  Run the Streamlit app from command line:
+
+    ```
+    streamlit run main.py
+    ```
+   
+    
 
 # bioinformatics
 
