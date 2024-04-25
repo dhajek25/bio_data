@@ -8,7 +8,7 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 1. Clone this repository to your local machine:
 
     ```
-    git clone https://github.com/**your-username**/bio_data.git
+    git clone https://github.com/your-username/bio_data.git
     ```
 
 # bioinformatics
