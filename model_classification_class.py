@@ -68,6 +68,8 @@ def classify_protein(protein_seq):
 
     return round(transposed, 3).head(3) * 100
 
+# FOR LOCAL TESTING
+
 # Usage:
 #model_path = 'trained_model/protein_classification.keras'
 #tokenizer_path = 'trained_model/tokenizer.json'

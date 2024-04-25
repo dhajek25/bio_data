@@ -5,9 +5,6 @@ import py3Dmol
 import requests
 import biotite.structure.io as bsio
 
-
-s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
-
 def dna_nucleotides_count(s):
     """ Count the nucleotides (A, T, C, G) in the input string.
 
@@ -189,14 +186,17 @@ class DNAProcessor:
         self.find_start_codon().codons_structure().find_proteins(codons_dict)
         return self.proteins
 
+# FOR LOCAL TESTING
+
+# s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
+
 # dna_processor = DNAProcessor('AGAUGCUUUUCAUUCUGACUGCAACGGGCAAUAUGUCUCUGUGUGGAUUAAAAAAAGAGUGUCUGAUAGCAGC')
 # dna_processor.find_start_codon()
 # dna_processor.codons_structure()
 # codons_dict = dna_processor.read_json_from_file('aminoacids_combination.json')
 # dna_processor.find_proteins(codons_dict)
 
-#
-# s = 'AGAUGCUUUUCAUUCUGACUGCAACGGGCAAUAUGUCUCUGUGUGGAUUAAAAAAAGAGUGUCUGAUAGCAGC'
+
 #
 # # Assuming you have a JSON file named 'data.json'
 # processor = DNAProcessor(s)

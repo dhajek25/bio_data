@@ -18,12 +18,3 @@ def insert_result(date, result):
 def fetch_result():
     res = db.fetch()
     return res.items
-
-
-date = '2021-09-01'
-
-result = 'TESTSTRING'
-
-#insert_result(date, result)
-
-#fetch_result()
