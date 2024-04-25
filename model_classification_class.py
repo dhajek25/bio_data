@@ -9,6 +9,18 @@ tokenizer_path = 'trained_model/tokenizer.json'
 
 def classify_protein(protein_seq):
 
+    """
+    Classifies a protein sequence into one or more protein classes using a trained model.
+
+    Parameters:
+    - protein_seq (str): The protein sequence to be classified.
+
+    Returns:
+    - pandas.DataFrame: A DataFrame containing the top predicted protein classes along with their probabilities.
+      The DataFrame has two columns: 'protein_class' and 'class_probability'. The top 3 predicted protein classes
+      are returned, sorted by probability in descending order.
+    """
+
     # Rename the columns (just 10 is used)
     col_names = [
         'HYDROLASE',
