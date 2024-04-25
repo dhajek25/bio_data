@@ -49,7 +49,7 @@ The protein_visualization.py script, which is used to send a POST request with a
 
 -------------------------------------------------------------------------------------------------------------------
 
-##
+
 #### Want explore more? Useful bioinformatics links:
 
 https://rosalind.info/problems/locations/
