@@ -31,6 +31,13 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 ## Example
 
+## Structure of bio_data folder and python files description
+### main.py 
+The main.py script servers as the entry for the DNA Analyzator web application built with Streamlit. It contains the Streamlit app definition and itegrates various scripts or functions to manipulate with DNA sequence provided by user.
+
+### functions.py
+The functions.py script contains functions and class for manipulation with DNA sequence provided by user. Every function is described. It contains eve DNAProcessor class, which handles proteosynthesis. At the end of the script is a script for local use.
+
 #### Want explore more? Useful bioinformatics links:
 
 https://rosalind.info/problems/locations/
