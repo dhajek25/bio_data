@@ -24,7 +24,7 @@ if selected_menu == "Data Entry":
     st.header('Choose the Function')
 
     # List of functions available for users to choose from
-    function_tuple = ("Nucleotides Count", "Transcription", "Complement", "Reverse Complement", 'Protein Creation')
+    function_tuple = ("Nucleotides Count", "Transcription", "Complement", "Reverse Complement", 'Protein Synthesis')
 
     # Taking DNA input from user and converting it to uppercase
     user_input = upper_letters(st.text_input("Enter your DNA: "))
@@ -67,13 +67,15 @@ if selected_menu == "Data Entry":
             elif selected_function == "Reverse Complement":
                 result = reverse_complement(user_input)
 
-            elif selected_function == "Protein Creation":
+            elif selected_function == "Protein Synthesis":
 
                 proteins = processor.process('aminoacids_combination.json')
                 result = "".join(proteins)
 
                 # Define string str_date, where you will write the actual date and time
                 str_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+
+                st.markdown("```\n5'3' Frame 3\n```")
 
                 dtb.insert_result(str_date, result)
 

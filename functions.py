@@ -119,7 +119,7 @@ class DNAProcessor:
         """
         start_codon_index = self.sequence.find(DNAProcessor.START_CODON)
         if start_codon_index != -1:
-            self.sequence = self.sequence[start_codon_index + 3:]
+            self.sequence = self.sequence[start_codon_index:]
         return self
 
     def codons_structure(self):
