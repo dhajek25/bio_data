@@ -39,7 +39,7 @@ def classify_protein(protein_seq):
     max_length = 350
 
     # Load the trained model
-    model = load_model(model_path)
+    model_loaded = load_model(model_path)
 
     # Load the trained tokenizer
     with open(tokenizer_path, 'r', encoding='utf-8') as f:
@@ -47,20 +47,16 @@ def classify_protein(protein_seq):
         loaded_tokenizer = tokenizer_from_json(loaded_tokenizer_json)
 
     # Tokenize the protein sequence
-    token_protein = loaded_tokenizer.texts_to_sequences(protein_seq)
-    token_protein = sequence.pad_sequences(token_protein, maxlen=max_length)
+    test_protein = loaded_tokenizer.texts_to_sequences([protein_seq])
+    test_protein = sequence.pad_sequences(test_protein, maxlen=max_length)
 
     # Predict the protein class
-    predicted_protein = model.predict(token_protein)
+    predicted_protein = model_loaded.predict(test_protein)
 
     # Convert the predicted protein class to a dataframe
     predicted_protein = pd.DataFrame(predicted_protein)
 
-
     predicted_protein.columns = col_names
-
-    # Get the predicted class with the highest probability
-    # predicted_class = predicted_protein.max().idxmax()
 
     # Find the highest number in the dataframe
     max_probability = predicted_protein.values.max()
