@@ -110,14 +110,52 @@ if selected_menu == "Data Visualization":
 
 if selected_menu == "Protein Classification":
 
-    data_list = dtb.fetch_result()
+    # Let the user choose between database and custom input
+    classification_option = st.radio("Choose classification method:", ("Database", "Custom Input"))
 
-    options = [item['result'] for item in data_list]
+    if classification_option == "Database":
+        # Fetch options from the database
+        data_list = dtb.fetch_result()
+        options_dtb = [item['result'] for item in data_list]
+        selected_option_dtb = st.selectbox("Choose a result from Database:", options_dtb)
+        if st.button("Classify Protein from Database"):
+            protein_class = classify_protein(selected_option_dtb)
+            st.write(protein_class)
 
-    selected_option = st.selectbox("Choose a result:", options)
+    elif classification_option == "Custom Input":
+        # Allow the user to enter their own input
+        custom_input = st.text_input("Enter custom protein sequence:")
+        if st.button("Classify Protein from Custom Input"):
+            if custom_input:
+                protein_class = classify_protein(custom_input)
+                st.write(protein_class)
+            else:
+                st.warning("Please enter a valid protein sequence.")
 
-    if st.button("Select Result"):
+    # data_list = dtb.fetch_result()
+    #
+    # options_dtb = [item['result'] for item in data_list]
+    #
+    # selected_option_classification = st.selectbox("Choose a result from test:", options_dtb)
+    #
+    # if st.button("Classify Protein"):
+    #
+    #     protein_class = classify_protein(selected_option_classification)
+    #
+    #     st.write(protein_class)
 
-        protein_class = classify_protein(selected_option)
 
-        st.write(protein_class)
+
+# if selected_menu == "Protein Classification":
+#
+#     data_list = dtb.fetch_result()
+#
+#     options = [item['result'] for item in data_list]
+#
+#     selected_option = st.selectbox("Choose a result:", options)
+#
+#     if st.button("Select Result"):
+#
+#         protein_class = classify_protein(selected_option)
+#
+#         st.write(protein_class)
