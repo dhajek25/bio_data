@@ -46,6 +46,10 @@ def classify_protein(protein_seq):
         loaded_tokenizer_json = f.read()
         loaded_tokenizer = tokenizer_from_json(loaded_tokenizer_json)
 
+    # # Load the tokenizer
+    # loaded_tokenizer = Tokenizer()
+    # loaded_tokenizer = loaded_tokenizer.from_json(open(tokenizer_path).read())
+
     # Tokenize the protein sequence
     test_protein = loaded_tokenizer.texts_to_sequences([protein_seq])
     test_protein = sequence.pad_sequences(test_protein, maxlen=max_length)
@@ -78,7 +82,7 @@ def classify_protein(protein_seq):
 
 # FOR LOCAL TESTING
 
-# Usage:
+# # Usage:
 # model_path = 'trained_model/protein_classification.keras'
 # tokenizer_path = 'trained_model/tokenizer.json'
 # protein_sequence = 'MVLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRVKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGNFGADAQGAMNKALELFRKDIAAKYKELGYQG'
