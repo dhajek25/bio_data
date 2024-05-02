@@ -4,8 +4,8 @@ from keras.models import load_model
 from keras.preprocessing.text import tokenizer_from_json
 from keras.preprocessing import sequence
 
-model_path = 'trained_model/protein_classification.keras'
-tokenizer_path = 'trained_model/tokenizer.json'
+model_path = 'trained_model/Protein_Classification_LSTM.keras'
+tokenizer_path = 'trained_model/tokenizer_LSTM.json'
 
 def classify_protein(protein_seq):
 
