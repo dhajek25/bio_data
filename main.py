@@ -160,4 +160,4 @@ if selected_menu == "Protein Classification":
 #
 #         st.write(protein_class)
 
-# some chgange
+# some changes
