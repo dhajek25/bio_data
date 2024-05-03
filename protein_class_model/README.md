@@ -19,3 +19,5 @@ Dense Layers:
 Loss Function: Categorical crossentropy, suitable for multi-class classification tasks where the target labels are one-hot encoded.
 Optimizer: Adam optimizer with a learning rate of 0.001, as specified earlier.
 Metrics: Accuracy is used as the evaluation metric to measure the model's performance during training and validation.
+
+![image](https://github.com/dhajek25/bio_data/assets/79058813/2d031660-4890-42b2-a037-eba3bbf78b30)
