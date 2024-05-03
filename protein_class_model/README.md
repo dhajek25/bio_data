@@ -1,8 +1,9 @@
 # Description
 This model is a neural network designed for protein classification. See **protein_class.ipynb**. <br>
-Here's a breakdown of its components and functionality:
 
-NOTE: Because of limits in calculation (no GPU) capacity I had to adjust several parameters, to trained the model.
+NOTE: Because of limits in calculation capacity (no GPU) I had to adjust several parameters, to trained the model.
+
+Here's a breakdown of its components and functionality:
 
 # Hyperparameters
 Early Stopping: This callback monitors the validation accuracy during training and stops the training process if the accuracy stops improving after a certain number of epochs (defined by the patience parameter). <br>
