@@ -1,5 +1,5 @@
 # Description
-This model is a neural network designed for protein classification. Here's a breakdown of its components and functionality:
+This model is a neural network designed for protein classification. See **protein_class.ipynb**  Here's a breakdown of its components and functionality:
 
 NOTE: Because of limits in calculation (no GPU) capacity I had to adjust several parameters, to trained the model.
 
