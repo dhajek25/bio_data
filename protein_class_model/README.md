@@ -20,4 +20,12 @@ Loss Function: Categorical crossentropy, suitable for multi-class classification
 Optimizer: Adam optimizer with a learning rate of 0.001, as specified earlier.
 Metrics: Accuracy is used as the evaluation metric to measure the model's performance during training and validation.
 
+# Model Summary
 ![image](https://github.com/dhajek25/bio_data/assets/79058813/2d031660-4890-42b2-a037-eba3bbf78b30)
+
+# Evaluation Metrics
+Train accuracy = 93.75%
+Validation accuracy = 87.17%
+
+# Evaluate Model
+![image](https://github.com/dhajek25/bio_data/assets/79058813/9434cdd4-fc46-4861-910b-18ade3ae4cf5)
