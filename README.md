@@ -31,7 +31,7 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 ## Example
 
-## Description of Python files
+## Description of Python files under main folder bio_data
 ### main.py 
 The main.py script servers as the entry for the DNA Analyzator web application built with Streamlit. It contains the Streamlit app definition and itegrates various scripts or functions to manipulate with DNA sequence provided by user.
 
@@ -41,14 +41,13 @@ The functions.py script contains functions and class for manipulation with DNA s
 ### model_classification_class.py
 The model_classification_class.py script serves for classification of protein into protein classes using a trained model.
 
-### protein_class_prep.ipynb
-The protein_class_prep.ipynb is Jupyter notebook, which was used for training the model for protein classification.
-
 ### protein_visualization.py
 The protein_visualization.py script, which is used to send a POST request with a Protein sequence to an external API (ESM Fold). The response is then visualize.
 
 ### dtb_connection.py
 Enables connection and writing/retrieving data to/from database.
+
+NOTE: inside folder **protein_class_model** you can find README about model, which is used for protein classification
 
 -------------------------------------------------------------------------------------------------------------------
 
