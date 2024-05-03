@@ -31,7 +31,22 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 ## Example
 
-## Description of Python files
+### Data Entry
+We can enter DNA sequence as you can see below into user field and select "Protein Synthesis" function. <br>
+App will accept the DNA sequence, which user provided and returned protein structure for provided DNA sequence. <br>
+
+![image](https://github.com/dhajek25/bio_data/assets/79058813/af9a448a-fd99-483a-9d80-bf3f13aadde1)
+
+### Protein Visiualization
+
+### Protein Classification
+Another step could be to click on "Protein Classification" bar. Here under "Choose classification method" you can choose "Database" and from the filter you can choose your protein. <br>
+The result will be table, in which we can see TOP3 results for your protein with the name of the protein class and probability, which says how likely your protein belongs under certain class.
+
+![image](https://github.com/dhajek25/bio_data/assets/79058813/64bb1521-e437-464f-9420-f1f5479f0c40)
+
+
+## Description of Python files under main folder bio_data
 ### main.py 
 The main.py script servers as the entry for the DNA Analyzator web application built with Streamlit. It contains the Streamlit app definition and itegrates various scripts or functions to manipulate with DNA sequence provided by user.
 
@@ -41,14 +56,13 @@ The functions.py script contains functions and class for manipulation with DNA s
 ### model_classification_class.py
 The model_classification_class.py script serves for classification of protein into protein classes using a trained model.
 
-### protein_class_prep.ipynb
-The protein_class_prep.ipynb is Jupyter notebook, which was used for training the model for protein classification.
-
 ### protein_visualization.py
 The protein_visualization.py script, which is used to send a POST request with a Protein sequence to an external API (ESM Fold). The response is then visualize.
 
 ### dtb_connection.py
 Enables connection and writing/retrieving data to/from database.
+
+NOTE: inside folder **protein_class_model** you can find README about model, which is used for protein classification
 
 -------------------------------------------------------------------------------------------------------------------
 
