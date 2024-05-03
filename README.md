@@ -33,7 +33,13 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 We can enter DNA sequence as you can see below into user field and select "Protein Synthesis" function. <br>
 App will accept the DNA sequence, which user provided and returned protein structure for provided DNA sequence. <br>
+
 ![image](https://github.com/dhajek25/bio_data/assets/79058813/af9a448a-fd99-483a-9d80-bf3f13aadde1)
+
+Another step could be to click on "Protein Classification" bar. Here under "Choose classification method" you can choose "Database" and from the filter you can choose your protein. <br>
+The result will be table, in which we can see TOP3 results for your protein with the name of the protein class and probability, which says how likely your protein belongs under certain class.
+
+![image](https://github.com/dhajek25/bio_data/assets/79058813/64bb1521-e437-464f-9420-f1f5479f0c40)
 
 
 ## Description of Python files under main folder bio_data
