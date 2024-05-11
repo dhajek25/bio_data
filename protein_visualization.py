@@ -62,7 +62,7 @@ def protein_fold(result):
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
     response = requests.post('https://api.esmatlas.com/foldSequence/v1/pdb/', headers=headers,
-                             data=result)
+                             data=result, verify=True)
 
     # Decode the content of the response and assign it to pdb_string
     pdb_string = response.content.decode('utf-8')

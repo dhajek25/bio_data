@@ -13,7 +13,7 @@ st.title("DNA Analyzator")
 
 
 selected_menu = option_menu(menu_title=None,
-            options=["Data Entry", "Data Visualization", "Protein Classification"],
+            options=["Data Entry", "Protein Visualization", "Protein Classification"],
             icons=["pencil_fill", "bar-chart-fill"],
             orientation="horizontal")
 
@@ -91,22 +91,18 @@ if selected_menu == "Data Entry":
     else:
         st.warning(f"The entered DNA contains invalid symbols: {is_dna_valid}! Valid symbols/nucleotides are 'A', 'T', 'C', 'G'!")
 
-if selected_menu == "Data Visualization":
+if selected_menu == "Protein Visualization":
 
     data_list = dtb.fetch_result()
-
     options = [item['result'] for item in data_list]
-
     selected_option = st.selectbox("Choose a result:", options)
-
     if st.button("Select Result"):
 
         st.write("You selected:", selected_option.split(" (")[0])
 
-    # choosen_result = data_list[0]['result']
-    #
-    # protein_fold(choosen_result)
-    # st.write(choosen_result)
+        protein_fold(selected_option)
+
+        st.write(selected_option)
 
 if selected_menu == "Protein Classification":
 
