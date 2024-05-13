@@ -76,7 +76,7 @@ def classify_protein(protein_seq):
     transposed = sorted_row.T
 
     # Rename the column to "class_probability"
-    transposed.columns = ['class_probability']
+    transposed.columns = ['Class probability']
 
     return round(transposed, 3).head(3) * 100
 
