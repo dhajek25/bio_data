@@ -31,15 +31,20 @@ The DNA Analyzator is a Streamlit-based web application built with Python, desig
 
 ## Example
 
-### Data Entry
+## Data Entry
 We can enter DNA sequence as you can see below into user field and select "Protein Synthesis" function. <br>
 App will accept the DNA sequence, which user provided and returned protein structure for provided DNA sequence. <br>
 
 ![image](https://github.com/dhajek25/bio_data/assets/79058813/af9a448a-fd99-483a-9d80-bf3f13aadde1)
 
-### Protein Visiualization
+## Protein Visiualization
+We can select protein from database. The result is predicted protein structure for protein, which we selected. <br>
+Every aminoacid would have different color. You can see plDDT, which tells us how confident the prediction was. Scale is from 0-100 (100 highest). <br>
 
-### Protein Classification
+![image](https://github.com/dhajek25/bio_data/assets/79058813/be699b30-05fe-4359-9d7a-b35393f2d24a)
+
+
+## Protein Classification
 Another step could be to click on "Protein Classification" bar. Here under "Choose classification method" you can choose "Database" and from the filter you can choose your protein. <br>
 The result will be table, in which we can see TOP3 results for your protein with the name of the protein class and probability, which says how likely your protein belongs under certain class.
 
